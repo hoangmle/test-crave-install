@@ -11,6 +11,10 @@ message(STATUS "defs:     ${crave_DEFINITIONS}")
 
 include_directories(${crave_INCLUDE_DIR})
 
+foreach (DEF ${crave_DEFINITIONS})
+  add_definitions(-D${DEF})
+endforeach()
+
 add_executable(main main.cpp)
 target_link_libraries(main ${crave_LIBRARIES})
 
